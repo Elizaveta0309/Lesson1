@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Lesson1</string>
+    <string name="app_name">Lesson2</string>
+    <string name="hint_for_name_editText">Имя</string>
+    <string name="hint_for_secondName_editText">Фамилия</string>
+    <string name="hint_for_password_editText">Пароль</string>
+    <string name="hint_for_submit_password_editText">Подтверждение пароля</string>
+    <string name="greeting">Лол</string>
+    <string name="text_for_registration_button">simpleEmail@pochta.kek</string>
+    <string name="suggestion_to_log_in">Уже есть аккаунт? Войти</string>
 </resources>
