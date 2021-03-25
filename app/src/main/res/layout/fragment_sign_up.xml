@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/lolTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/greeting"
+        android:textColor="@color/Green"
+        android:textSize="32sp"
+        android:textStyle="normal|bold"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_weight="3" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/example_email_for_registration"
+            android:textSize="16sp"
+            android:hint="Email"
+            android:drawableEnd="@drawable/ic_baseline_email_24"
+            android:backgroundTint="@color/Green"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_baseline_person_outline_24"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/hint_for_name_editText"
+            android:background="@color/White"
+            android:textSize="16sp"
+            >
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/secondNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:background="@color/White"
+            android:hint="@string/hint_for_secondName_editText"
+            android:textSize="16sp"
+            >
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPassword"
+            android:drawableEnd="@drawable/ic_baseline_lock_24"
+            android:hint="@string/hint_for_password_editText"
+            android:background="@color/White"
+            android:textSize="16sp"
+            >
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/submitPasswordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/hint_for_submit_password_editText"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:background="@color/White"
+            android:drawableEnd="@drawable/ic_baseline_lock_open_24">
+
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/RegistrationButton"
+        android:layout_marginTop="49dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Green"
+        android:fontFamily="@font/roboto"
+        android:text="@string/registration_button"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/logInTextView"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/Black"
+        android:textSize="16sp"
+        android:text="@string/suggestion_to_log_in"
+        android:layout_gravity="center"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+
+
+</LinearLayout>

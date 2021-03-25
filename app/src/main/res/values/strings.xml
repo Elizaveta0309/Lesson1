@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Lesson2</string>
+    <string name="app_name">Lesson3</string>
     <string name="hint_for_name_editText">Имя</string>
     <string name="hint_for_secondName_editText">Фамилия</string>
     <string name="hint_for_password_editText">Пароль</string>
     <string name="hint_for_submit_password_editText">Подтверждение пароля</string>
     <string name="greeting">Лол</string>
-    <string name="example_email_for_registration">simpleEmail@pochta.kek</string>
+    <string name="example_email_for_registration">simpleEmail@pochta.kek </string>
     <string name="suggestion_to_log_in">Уже есть аккаунт? Войти</string>
     <string name="registration_button"> Регистрация</string>
 
@@ -14,4 +14,13 @@
     <string name="example_email_authorization">simpleEmail@pochta.kek</string>
     <string name="authorization_button">Войти</string>
     <string name="suggestion_to_sign_up">Нет аккаунта? Зарегайся!</string>
+
+    <string name="signInGreeting">Привет, рады снова тебя видеть!</string>
+    <string name="emailAlert">Введите Ваш email!</string>
+    <string name="passwordAlert">Введите пароль!</string>
+    <string name="signUpGreeting">Успешная регистрация!</string>
+    <string name="nameAlert">Введите Ваше имя!</string>
+    <string name="secondNameAlert">Введите Вашу фамилию!</string>
+    <string name="smallPasswordAlert">Пароль меньше 8 символов!</string>
+    <string name="submitPasswordAlert">Пароли не совпадают!</string>
 </resources>
