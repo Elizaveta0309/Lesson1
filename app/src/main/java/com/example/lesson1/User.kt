@@ -6,17 +6,23 @@ import android.os.Parcel
 import android.os.Parcelable
 
 
-class User(_email: String, _password: String):Parcelable {
+class User(_email: String, _password: String,_name:String,_second_name:String):Parcelable {
     var email:String =_email
     var password:String =_password
+    var name:String = _name
+    var secondName:String = _second_name
 
 
-    constructor(parcel: Parcel) : this(parcel.readString().toString(),parcel.readString().toString()){
+
+    constructor(parcel: Parcel) : this(parcel.readString().toString(),parcel.readString().toString(),
+        parcel.readString().toString(),parcel.readString().toString()){
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(email)
         parcel.writeString(password)
+        parcel.writeString(name)
+        parcel.writeString(secondName)
     }
 
     override fun describeContents(): Int {

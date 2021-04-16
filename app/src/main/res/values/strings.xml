@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Lesson3</string>
+    <string name="app_name">Lesson4</string>
     <string name="hint_for_name_editText">Имя</string>
     <string name="hint_for_secondName_editText">Фамилия</string>
     <string name="hint_for_password_editText">Пароль</string>
+    <string name="hint_for_input_message_editText">Напиши сюда...</string>
     <string name="hint_for_submit_password_editText">Подтверждение пароля</string>
     <string name="greeting">Лол</string>
     <string name="example_email_for_registration">simpleEmail@pochta.kek </string>
@@ -23,4 +24,8 @@
     <string name="secondNameAlert">Введите Вашу фамилию!</string>
     <string name="smallPasswordAlert">Пароль меньше 8 символов!</string>
     <string name="submitPasswordAlert">Пароли не совпадают!</string>
+
+    <string name="firstAnswer">Привет!</string>
+    <string name="secondAnswer">Отлично!А у тебя как успехи на Bonch.Dev?</string>
+    <string name="thirdAnswer">Здорово!</string>
 </resources>
