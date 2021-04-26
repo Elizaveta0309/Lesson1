@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_sign_up.*
 import kotlinx.android.synthetic.main.fragment_sign_up.emailEditText
 import kotlinx.android.synthetic.main.fragment_sign_up.passwordEditText
 
-class SignUpFragment:Fragment() {
+class SignUpFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -24,7 +24,7 @@ class SignUpFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_sign_up,container,false);
+        val view = inflater.inflate(R.layout.fragment_sign_up, container, false);
         return view
     }
 
@@ -45,7 +45,7 @@ class SignUpFragment:Fragment() {
             val password = passwordEditText.text.toString()
             val submitPassword = submitPasswordEditText.text.toString()
             if (validate(email, name, secondName, password, submitPassword)) {
-                val user = User(email, password,name,secondName)
+                val user = User(email, password, name, secondName)
                 startMainMenuActivity(user)
             } else {
                 showErrorDialog(email, name, secondName, password, submitPassword)
@@ -55,15 +55,21 @@ class SignUpFragment:Fragment() {
     }
 
 
-    private fun startMainMenuActivity(user: User){
+    private fun startMainMenuActivity(user: User) {
         val intent = Intent(activity, MainMenuActivity::class.java)
-        intent.putExtra("message",getString(R.string.signUpGreeting))
-        intent.putExtra("user",user)
-        if(intent.resolveActivity(requireActivity().packageManager)!=null){
+        intent.putExtra("message", getString(R.string.signUpGreeting))
+        intent.putExtra("user", user)
+        if (intent.resolveActivity(requireActivity().packageManager) != null) {
             startActivity(intent)
         }
     }
-    private fun showErrorDialog(email: String,name: String,secondName: String,password: String,submitPassword: String){
+    private fun showErrorDialog(
+        email: String,
+        name: String,
+        secondName: String,
+        password: String,
+        submitPassword: String
+    ) {
         var firstBanner = ""
         var secondBanner = ""
         var thirdBanner = ""
@@ -72,27 +78,39 @@ class SignUpFragment:Fragment() {
         var sixthBanner = ""
         var arguments = Bundle()
         //куча if как-то некрасиво,но не знаю,как еще сделать
-        if ((email == "") or (email == getString(R.string.example_email_authorization) )) firstBanner += "\n"+getString(R.string.emailAlert)+"\n"
-        if (name == "" ) secondBanner += "\n"+ getString(R.string.nameAlert)+"\n"
-        if (secondName == "" ) thirdBanner += "\n"+getString(R.string.secondNameAlert)+"\n"
-        if (password== "" ) fourthBanner += "\n"+getString(R.string.passwordAlert)+"\n"
-        if ((password.toCharArray().size<8 )and (password!="")) fifthBanner += "\n"+getString(R.string.smallPasswordAlert)+"\n"
-        if ((submitPassword != password) and(password.toCharArray().size>8 ) and (password!="")) fifthBanner += "\n"+getString(R.string.submitPasswordAlert)+"\n"
+        if ((email == "") or (email == getString(R.string.example_email_authorization))) firstBanner += "\n" + getString(
+            R.string.emailAlert
+        ) + "\n"
+        if (name == "") secondBanner += "\n" + getString(R.string.nameAlert) + "\n"
+        if (secondName == "") thirdBanner += "\n" + getString(R.string.secondNameAlert) + "\n"
+        if (password == "") fourthBanner += "\n" + getString(R.string.passwordAlert) + "\n"
+        if ((password.toCharArray().size < 8) and (password != "")) fifthBanner += "\n" + getString(
+            R.string.smallPasswordAlert
+        ) + "\n"
+        if ((submitPassword != password) and (password.toCharArray().size > 8) and (password != "")) fifthBanner += "\n" + getString(
+            R.string.submitPasswordAlert
+        ) + "\n"
 
-        arguments.putString("firstBanner",firstBanner)
-        arguments.putString("secondBanner",secondBanner)
-        arguments.putString("thirdBanner",thirdBanner)
-        arguments.putString("fourthBanner",fourthBanner)
-        arguments.putString("fifthBanner",fifthBanner)
-        arguments.putString("sixthBanner",sixthBanner)
-        arguments.putString("Fragment","SignUp")
+        arguments.putString("firstBanner", firstBanner)
+        arguments.putString("secondBanner", secondBanner)
+        arguments.putString("thirdBanner", thirdBanner)
+        arguments.putString("fourthBanner", fourthBanner)
+        arguments.putString("fifthBanner", fifthBanner)
+        arguments.putString("sixthBanner", sixthBanner)
+        arguments.putString("Fragment", "SignUp")
         val dialog = CustomDialogFragment()
         dialog.arguments = arguments
         dialog.show(requireActivity().supportFragmentManager, "Dialog fragment")
     }
 
-    private fun validate(email:String,name:String,secondName:String,password:String,submitPassword:String): Boolean {
+    private fun validate(
+        email: String,
+        name: String,
+        secondName: String,
+        password: String,
+        submitPassword: String
+    ): Boolean {
 
-        return (email!="") and (email!="simpleEmail@pochta.kek") and (name!= "") and (secondName!="") and (password!="")and (password.toCharArray().size>8) and(submitPassword ==password)
+        return (email != "") and (email != "simpleEmail@pochta.kek") and (name != "") and (secondName != "") and (password != "") and (password.toCharArray().size > 8) and (submitPassword == password)
     }
 }

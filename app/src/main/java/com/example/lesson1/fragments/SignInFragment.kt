@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.lesson1.*
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 
-class SignInFragment: Fragment() {
+class SignInFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,41 +39,42 @@ class SignInFragment: Fragment() {
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            if (validate(email,password)) {
-                val user = User(email,password,"Зарегистрированный","Пользователь")
+            if (validate(email, password)) {
+                val user = User(email, password, "Зарегистрированный", "Пользователь")
                 startMainMenuActivity(user)
             } else {
-                showErrorDialog(email,password)
+                showErrorDialog(email, password)
             }
         }
     }
 
 
-    private fun startMainMenuActivity(user: User){
+    private fun startMainMenuActivity(user: User) {
         val intent = Intent(activity, MainMenuActivity::class.java)
-        intent.putExtra("message",getString(R.string.signInGreeting))
-        intent.putExtra("user",user)
-        if(intent.resolveActivity(requireActivity().packageManager)!=null){
+        intent.putExtra("message", getString(R.string.signInGreeting))
+        intent.putExtra("user", user)
+        if (intent.resolveActivity(requireActivity().packageManager) != null) {
             startActivity(intent)
         }
     }
-    private fun showErrorDialog(email: String,password: String){
+
+    private fun showErrorDialog(email: String, password: String) {
         var firstBanner = ""
         var secondBanner = ""
         var banners = Bundle()
 
-        if ((email == "") or (email == "simpleEmail@pochta.kek"))  firstBanner += "\n"+getString(R.string.emailAlert)+"\n"
-        if (password == "" ) secondBanner += "\n"+getString(R.string.passwordAlert)+"\n"
+        if ((email == "") or (email == "simpleEmail@pochta.kek")) firstBanner += "\n" + getString(R.string.emailAlert) + "\n"
+        if (password == "") secondBanner += "\n" + getString(R.string.passwordAlert) + "\n"
 
-        banners.putString("firstBanner",firstBanner)
-        banners.putString("secondBanner",secondBanner)
+        banners.putString("firstBanner", firstBanner)
+        banners.putString("secondBanner", secondBanner)
         val dialog = CustomDialogFragment()
         dialog.arguments = banners
         dialog.show(requireActivity().supportFragmentManager, "Dialog fragment")
     }
 
-    private fun validate(email:String,password:String): Boolean {
+    private fun validate(email: String, password: String): Boolean {
 
-        return (email!="") and (email!=getString(R.string.example_email_authorization)) and(password!="")
+        return (email != "") and (email != getString(R.string.example_email_authorization)) and (password != "")
     }
 }
